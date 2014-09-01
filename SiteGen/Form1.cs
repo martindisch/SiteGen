@@ -48,7 +48,7 @@ namespace SiteGen
                 folderProgress.Maximum = System.IO.Directory.GetDirectories(folderOriginPath.Text, "*", System.IO.SearchOption.AllDirectories).Count();
                 folderProgress.Minimum = 0;
                 folderProgress.Step = 1;
-                generate(folderOriginPath.Text, folderTargetPath.Text);
+                generate(folderOriginPath.Text, folderTargetPath.Text, 1);
                 MessageBox.Show("Alle Frames wurden erfolgreich generiert.", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -57,7 +57,7 @@ namespace SiteGen
             }
         }
 
-        private void generate(String path, String targetPath)
+        private void generate(String path, String targetPath, int subLevel)
         {
             DirectoryInfo directory = new DirectoryInfo(path);
             DirectoryInfo[] directories = directory.GetDirectories();
@@ -69,16 +69,16 @@ namespace SiteGen
                 String tempPath = targetPath + "\\" + folder.Name;
                 Directory.CreateDirectory(tempPath);
 
-                content += Util.createEntry(folder.Name, "", Util.getIconPath(Filetype.FOLDER));
+                content += Util.createEntry(folder.Name, "Folder", subLevel);
 
-                generate(path + "\\" + folder.Name, tempPath);
+                generate(path + "\\" + folder.Name, tempPath, subLevel + 1);
             }
             foreach (FileInfo file in files)
             {
                 String ext = file.Extension;
                 if (!ext.Equals(".db"))
                 {
-                    content += Util.createEntry(file.Name, "", Util.getIconPath(Util.getFiletype(file.Extension)));
+                    content += Util.createEntry(file.Name, file.Extension, subLevel);
                 }
             }
 
