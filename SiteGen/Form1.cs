@@ -69,7 +69,7 @@ namespace SiteGen
                 String tempPath = targetPath + "\\" + folder.Name;
                 Directory.CreateDirectory(tempPath);
 
-                content += "<li>" + folder.Name + "</li>";
+                content += Util.createEntry(folder.Name, "", Util.getIconPath(Filetype.FOLDER));
 
                 generate(path + "\\" + folder.Name, tempPath);
             }
@@ -78,7 +78,7 @@ namespace SiteGen
                 String ext = file.Extension;
                 if (!ext.Equals(".db"))
                 {
-                    content += "<li>" + file.Name + "</li>";
+                    content += Util.createEntry(file.Name, "", Util.getIconPath(Util.getFiletype(file.Extension)));
                 }
             }
 
