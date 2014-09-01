@@ -31,21 +31,21 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.folderStart = new System.Windows.Forms.Button();
+            this.folderProgress = new System.Windows.Forms.ProgressBar();
+            this.folderSelectTarget = new System.Windows.Forms.Button();
+            this.folderTargetPath = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.folderSelectOrigin = new System.Windows.Forms.Button();
+            this.folderOriginPath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.contentsSelectOrigin = new System.Windows.Forms.Button();
+            this.contentsOriginPath = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.contentsOutput = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.contentsGo = new System.Windows.Forms.Button();
+            this.contentsProgress = new System.Windows.Forms.ProgressBar();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -63,12 +63,12 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button5);
-            this.tabPage1.Controls.Add(this.progressBar2);
+            this.tabPage1.Controls.Add(this.contentsGo);
+            this.tabPage1.Controls.Add(this.contentsProgress);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.textBox4);
-            this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.contentsOutput);
+            this.tabPage1.Controls.Add(this.contentsSelectOrigin);
+            this.tabPage1.Controls.Add(this.contentsOriginPath);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
@@ -80,13 +80,13 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.progressBar1);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.folderStart);
+            this.tabPage2.Controls.Add(this.folderProgress);
+            this.tabPage2.Controls.Add(this.folderSelectTarget);
+            this.tabPage2.Controls.Add(this.folderTargetPath);
             this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.folderSelectOrigin);
+            this.tabPage2.Controls.Add(this.folderOriginPath);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -96,38 +96,38 @@
             this.tabPage2.Text = "Ordneransichten";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // folderStart
             // 
-            this.button3.Location = new System.Drawing.Point(407, 149);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 24);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Los";
-            this.button3.UseVisualStyleBackColor = true;
+            this.folderStart.Location = new System.Drawing.Point(407, 149);
+            this.folderStart.Name = "folderStart";
+            this.folderStart.Size = new System.Drawing.Size(90, 24);
+            this.folderStart.TabIndex = 7;
+            this.folderStart.Text = "Los";
+            this.folderStart.UseVisualStyleBackColor = true;
             // 
-            // progressBar1
+            // folderProgress
             // 
-            this.progressBar1.Location = new System.Drawing.Point(9, 149);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(392, 23);
-            this.progressBar1.TabIndex = 6;
+            this.folderProgress.Location = new System.Drawing.Point(9, 149);
+            this.folderProgress.Name = "folderProgress";
+            this.folderProgress.Size = new System.Drawing.Size(392, 23);
+            this.folderProgress.TabIndex = 6;
             // 
-            // button2
+            // folderSelectTarget
             // 
-            this.button2.Location = new System.Drawing.Point(407, 95);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 24);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Auswählen";
-            this.button2.UseVisualStyleBackColor = true;
+            this.folderSelectTarget.Location = new System.Drawing.Point(407, 95);
+            this.folderSelectTarget.Name = "folderSelectTarget";
+            this.folderSelectTarget.Size = new System.Drawing.Size(90, 24);
+            this.folderSelectTarget.TabIndex = 5;
+            this.folderSelectTarget.Text = "Auswählen";
+            this.folderSelectTarget.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // folderTargetPath
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 95);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(395, 22);
-            this.textBox2.TabIndex = 4;
+            this.folderTargetPath.Location = new System.Drawing.Point(6, 95);
+            this.folderTargetPath.Name = "folderTargetPath";
+            this.folderTargetPath.ReadOnly = true;
+            this.folderTargetPath.Size = new System.Drawing.Size(395, 22);
+            this.folderTargetPath.TabIndex = 4;
             // 
             // label2
             // 
@@ -138,22 +138,22 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Zielordner";
             // 
-            // button1
+            // folderSelectOrigin
             // 
-            this.button1.Location = new System.Drawing.Point(407, 37);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 24);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Auswählen";
-            this.button1.UseVisualStyleBackColor = true;
+            this.folderSelectOrigin.Location = new System.Drawing.Point(407, 37);
+            this.folderSelectOrigin.Name = "folderSelectOrigin";
+            this.folderSelectOrigin.Size = new System.Drawing.Size(90, 24);
+            this.folderSelectOrigin.TabIndex = 2;
+            this.folderSelectOrigin.Text = "Auswählen";
+            this.folderSelectOrigin.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // folderOriginPath
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(395, 22);
-            this.textBox1.TabIndex = 1;
+            this.folderOriginPath.Location = new System.Drawing.Point(6, 37);
+            this.folderOriginPath.Name = "folderOriginPath";
+            this.folderOriginPath.ReadOnly = true;
+            this.folderOriginPath.Size = new System.Drawing.Size(395, 22);
+            this.folderOriginPath.TabIndex = 1;
             // 
             // label1
             // 
@@ -164,22 +164,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Ausgangsordner";
             // 
-            // button4
+            // contentsSelectOrigin
             // 
-            this.button4.Location = new System.Drawing.Point(407, 35);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 24);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Auswählen";
-            this.button4.UseVisualStyleBackColor = true;
+            this.contentsSelectOrigin.Location = new System.Drawing.Point(407, 35);
+            this.contentsSelectOrigin.Name = "contentsSelectOrigin";
+            this.contentsSelectOrigin.Size = new System.Drawing.Size(90, 24);
+            this.contentsSelectOrigin.TabIndex = 5;
+            this.contentsSelectOrigin.Text = "Auswählen";
+            this.contentsSelectOrigin.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // contentsOriginPath
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 35);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(395, 22);
-            this.textBox3.TabIndex = 4;
+            this.contentsOriginPath.Location = new System.Drawing.Point(6, 35);
+            this.contentsOriginPath.Name = "contentsOriginPath";
+            this.contentsOriginPath.ReadOnly = true;
+            this.contentsOriginPath.Size = new System.Drawing.Size(395, 22);
+            this.contentsOriginPath.TabIndex = 4;
             // 
             // label3
             // 
@@ -190,14 +190,14 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Ausgangsordner";
             // 
-            // textBox4
+            // contentsOutput
             // 
-            this.textBox4.Location = new System.Drawing.Point(9, 84);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(488, 169);
-            this.textBox4.TabIndex = 6;
+            this.contentsOutput.Location = new System.Drawing.Point(9, 84);
+            this.contentsOutput.Multiline = true;
+            this.contentsOutput.Name = "contentsOutput";
+            this.contentsOutput.ReadOnly = true;
+            this.contentsOutput.Size = new System.Drawing.Size(488, 169);
+            this.contentsOutput.TabIndex = 6;
             // 
             // label4
             // 
@@ -208,21 +208,21 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Ausgabe";
             // 
-            // button5
+            // contentsGo
             // 
-            this.button5.Location = new System.Drawing.Point(407, 268);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(90, 24);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Los";
-            this.button5.UseVisualStyleBackColor = true;
+            this.contentsGo.Location = new System.Drawing.Point(407, 268);
+            this.contentsGo.Name = "contentsGo";
+            this.contentsGo.Size = new System.Drawing.Size(90, 24);
+            this.contentsGo.TabIndex = 9;
+            this.contentsGo.Text = "Los";
+            this.contentsGo.UseVisualStyleBackColor = true;
             // 
-            // progressBar2
+            // contentsProgress
             // 
-            this.progressBar2.Location = new System.Drawing.Point(9, 268);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(392, 23);
-            this.progressBar2.TabIndex = 8;
+            this.contentsProgress.Location = new System.Drawing.Point(9, 268);
+            this.contentsProgress.Name = "contentsProgress";
+            this.contentsProgress.Size = new System.Drawing.Size(392, 23);
+            this.contentsProgress.TabIndex = 8;
             // 
             // Form1
             // 
@@ -249,21 +249,21 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button folderStart;
+        private System.Windows.Forms.ProgressBar folderProgress;
+        private System.Windows.Forms.Button folderSelectTarget;
+        private System.Windows.Forms.TextBox folderTargetPath;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button folderSelectOrigin;
+        private System.Windows.Forms.TextBox folderOriginPath;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button contentsSelectOrigin;
+        private System.Windows.Forms.TextBox contentsOriginPath;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.Button contentsGo;
+        private System.Windows.Forms.ProgressBar contentsProgress;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox contentsOutput;
     }
 }
 
