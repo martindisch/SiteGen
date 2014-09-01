@@ -44,12 +44,46 @@ namespace SiteGen
         {
             if (Directory.Exists(folderOriginPath.Text) && Directory.Exists(folderTargetPath.Text))
             {
-
+                folderProgress.Value = 0;
+                folderProgress.Maximum = System.IO.Directory.GetDirectories(folderOriginPath.Text, "*", System.IO.SearchOption.AllDirectories).Count();
+                folderProgress.Minimum = 0;
+                folderProgress.Step = 1;
+                generate(folderOriginPath.Text, folderTargetPath.Text);
+                MessageBox.Show("Alle Frames wurden erfolgreich generiert.", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("Nicht alle ausgewählten Verzeichnisse existieren.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void generate(String path, String targetPath)
+        {
+            DirectoryInfo directory = new DirectoryInfo(path);
+            DirectoryInfo[] directories = directory.GetDirectories();
+            FileInfo[] files = directory.GetFiles();
+
+            String content = "<ul>";
+            foreach (DirectoryInfo folder in directories)
+            {
+                String tempPath = targetPath + "\\" + folder.Name;
+                Directory.CreateDirectory(tempPath);
+
+                content += "<li>" + folder.Name + "</li>";
+
+                generate(path + "\\" + folder.Name, tempPath);
+            }
+            foreach (FileInfo file in files)
+            {
+                content += "<li>" + file.Name + "</li>";
+            }
+
+            content += "</ul>";
+            TextWriter writer = new StreamWriter(targetPath + "\\frame.html", false, System.Text.Encoding.UTF8, 512);
+            writer.Write(content);
+            writer.Close();
+
+            folderProgress.PerformStep();
         }
     }
 }
