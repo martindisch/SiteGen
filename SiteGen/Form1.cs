@@ -75,7 +75,11 @@ namespace SiteGen
             }
             foreach (FileInfo file in files)
             {
-                content += "<li>" + file.Name + "</li>";
+                String ext = file.Extension;
+                if (!ext.Equals(".db"))
+                {
+                    content += "<li>" + file.Name + "</li>";
+                }
             }
 
             content += "</ul>";
