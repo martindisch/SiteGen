@@ -63,7 +63,7 @@ namespace SiteGen
             DirectoryInfo[] directories = directory.GetDirectories();
             FileInfo[] files = directory.GetFiles();
 
-            String content = "<ul>";
+            String content = "<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'> <html> <head> <meta http-equiv='Content-Type' content='text/html; charset=utf-8'> <title>" + directory.Name + "</title> <style type='text/css'> body { 	background-color: #FFF; 	margin-top: 40px;	 } table { 	font-family: Arial, Helvetica, sans-serif; 	font-size: 11pt; } h1 { 	font-family: Arial, Helvetica, sans-serif; 	font-weight: bold; 	font-size: 24px; } </style> </head>  <body> <h1>" + directory.Name + "</h1> <table width='559' height='253' border='0'>";
             foreach (DirectoryInfo folder in directories)
             {
                 String tempPath = targetPath + "\\" + folder.Name;
@@ -82,7 +82,7 @@ namespace SiteGen
                 }
             }
 
-            content += "</ul>";
+            content += "</table> </body> </html>";
             TextWriter writer = new StreamWriter(targetPath + "\\frame.html", false, System.Text.Encoding.UTF8, 512);
             writer.Write(content);
             writer.Close();

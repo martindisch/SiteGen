@@ -52,7 +52,11 @@ namespace SiteGen
         }
 
         public static String createEntry(String fileName, String filePath, String iconPath) {
-            return "<li>" + fileName + "  -  " + iconPath + "</li>";
+            String entry = "<tr><td width='60'><a href='" + fileName + "'><img src='" + iconPath + "' width='30' height='30'></a></td>";
+            entry += "<td width='254'><a href='" + fileName + "'>" + fileName + "</a></td>";
+            entry += "<td width='138'>S Kdt</td>";
+            entry += "<td width='89'>01.01.2014</td></tr>";
+            return entry;
         }
     }
 }
