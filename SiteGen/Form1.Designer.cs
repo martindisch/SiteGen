@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.contentsPage = new System.Windows.Forms.TabPage();
             this.folderPage = new System.Windows.Forms.TabPage();
@@ -233,10 +234,11 @@
             this.ClientSize = new System.Drawing.Size(538, 362);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "SiteGen";
             this.tabControl1.ResumeLayout(false);
             this.contentsPage.ResumeLayout(false);
             this.contentsPage.PerformLayout();
