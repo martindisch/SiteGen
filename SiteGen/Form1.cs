@@ -16,5 +16,26 @@ namespace SiteGen
         {
             InitializeComponent();
         }
+
+        private void folderSelectOrigin_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dg = new FolderBrowserDialog();
+            dg.ShowNewFolderButton = false;
+            dg.RootFolder = System.Environment.SpecialFolder.Desktop;
+            if (dg.ShowDialog() == DialogResult.OK)
+            {
+                folderOriginPath.Text = dg.SelectedPath;
+            }
+        }
+
+        private void folderSelectTarget_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dg = new FolderBrowserDialog();
+            dg.RootFolder = System.Environment.SpecialFolder.Desktop;
+            if (dg.ShowDialog() == DialogResult.OK)
+            {
+                folderTargetPath.Text = dg.SelectedPath;
+            }
+        }
     }
 }

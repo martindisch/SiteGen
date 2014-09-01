@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.contentsPage = new System.Windows.Forms.TabPage();
+            this.folderPage = new System.Windows.Forms.TabPage();
             this.folderStart = new System.Windows.Forms.Button();
             this.folderProgress = new System.Windows.Forms.ProgressBar();
             this.folderSelectTarget = new System.Windows.Forms.Button();
@@ -47,54 +47,54 @@
             this.contentsGo = new System.Windows.Forms.Button();
             this.contentsProgress = new System.Windows.Forms.ProgressBar();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.contentsPage.SuspendLayout();
+            this.folderPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.folderPage);
+            this.tabControl1.Controls.Add(this.contentsPage);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(514, 338);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // contentsPage
             // 
-            this.tabPage1.Controls.Add(this.contentsGo);
-            this.tabPage1.Controls.Add(this.contentsProgress);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.contentsOutput);
-            this.tabPage1.Controls.Add(this.contentsSelectOrigin);
-            this.tabPage1.Controls.Add(this.contentsOriginPath);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(506, 309);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Inhaltsverzeichnis";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.contentsPage.Controls.Add(this.contentsGo);
+            this.contentsPage.Controls.Add(this.contentsProgress);
+            this.contentsPage.Controls.Add(this.label4);
+            this.contentsPage.Controls.Add(this.contentsOutput);
+            this.contentsPage.Controls.Add(this.contentsSelectOrigin);
+            this.contentsPage.Controls.Add(this.contentsOriginPath);
+            this.contentsPage.Controls.Add(this.label3);
+            this.contentsPage.Location = new System.Drawing.Point(4, 25);
+            this.contentsPage.Name = "contentsPage";
+            this.contentsPage.Padding = new System.Windows.Forms.Padding(3);
+            this.contentsPage.Size = new System.Drawing.Size(506, 309);
+            this.contentsPage.TabIndex = 0;
+            this.contentsPage.Text = "Inhaltsverzeichnis";
+            this.contentsPage.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // folderPage
             // 
-            this.tabPage2.Controls.Add(this.folderStart);
-            this.tabPage2.Controls.Add(this.folderProgress);
-            this.tabPage2.Controls.Add(this.folderSelectTarget);
-            this.tabPage2.Controls.Add(this.folderTargetPath);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.folderSelectOrigin);
-            this.tabPage2.Controls.Add(this.folderOriginPath);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(506, 309);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Ordneransichten";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.folderPage.Controls.Add(this.folderStart);
+            this.folderPage.Controls.Add(this.folderProgress);
+            this.folderPage.Controls.Add(this.folderSelectTarget);
+            this.folderPage.Controls.Add(this.folderTargetPath);
+            this.folderPage.Controls.Add(this.label2);
+            this.folderPage.Controls.Add(this.folderSelectOrigin);
+            this.folderPage.Controls.Add(this.folderOriginPath);
+            this.folderPage.Controls.Add(this.label1);
+            this.folderPage.Location = new System.Drawing.Point(4, 25);
+            this.folderPage.Name = "folderPage";
+            this.folderPage.Padding = new System.Windows.Forms.Padding(3);
+            this.folderPage.Size = new System.Drawing.Size(506, 309);
+            this.folderPage.TabIndex = 1;
+            this.folderPage.Text = "Ordneransichten";
+            this.folderPage.UseVisualStyleBackColor = true;
             // 
             // folderStart
             // 
@@ -120,6 +120,7 @@
             this.folderSelectTarget.TabIndex = 5;
             this.folderSelectTarget.Text = "Auswählen";
             this.folderSelectTarget.UseVisualStyleBackColor = true;
+            this.folderSelectTarget.Click += new System.EventHandler(this.folderSelectTarget_Click);
             // 
             // folderTargetPath
             // 
@@ -146,6 +147,7 @@
             this.folderSelectOrigin.TabIndex = 2;
             this.folderSelectOrigin.Text = "Auswählen";
             this.folderSelectOrigin.UseVisualStyleBackColor = true;
+            this.folderSelectOrigin.Click += new System.EventHandler(this.folderSelectOrigin_Click);
             // 
             // folderOriginPath
             // 
@@ -236,10 +238,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.contentsPage.ResumeLayout(false);
+            this.contentsPage.PerformLayout();
+            this.folderPage.ResumeLayout(false);
+            this.folderPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -247,8 +249,8 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage contentsPage;
+        private System.Windows.Forms.TabPage folderPage;
         private System.Windows.Forms.Button folderStart;
         private System.Windows.Forms.ProgressBar folderProgress;
         private System.Windows.Forms.Button folderSelectTarget;
