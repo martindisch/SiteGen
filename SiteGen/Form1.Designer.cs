@@ -105,6 +105,7 @@
             this.folderStart.TabIndex = 7;
             this.folderStart.Text = "Los";
             this.folderStart.UseVisualStyleBackColor = true;
+            this.folderStart.Click += new System.EventHandler(this.folderStart_Click);
             // 
             // folderProgress
             // 
