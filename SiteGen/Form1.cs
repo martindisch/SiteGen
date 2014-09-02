@@ -19,6 +19,8 @@ namespace SiteGen
             InitializeComponent();
         }
 
+        // Folder starts here
+
         private void folderSelectOrigin_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog dg = new FolderBrowserDialog();
@@ -88,6 +90,24 @@ namespace SiteGen
             writer.Close();
 
             folderProgress.PerformStep();
+        }
+
+        // Contents starts here
+
+        private void contentsSelectOrigin_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dg = new FolderBrowserDialog();
+            dg.ShowNewFolderButton = false;
+            dg.RootFolder = System.Environment.SpecialFolder.Desktop;
+            if (dg.ShowDialog() == DialogResult.OK)
+            {
+                contentsOriginPath.Text = dg.SelectedPath;
+            }
+        }
+
+        private void contentsGo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
