@@ -84,9 +84,8 @@ namespace SiteGen
             }
 
             content += "</table> </body> </html>";
-            TextWriter writer = new StreamWriter(targetPath + "\\frame.html", false, System.Text.Encoding.UTF8, 512);
-            writer.Write(content);
-            writer.Close();
+            
+            File.WriteAllText(targetPath + "\\frame.html", content);
 
             folderProgress.PerformStep();
         }
@@ -123,10 +122,7 @@ namespace SiteGen
                 dg.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 if (dg.ShowDialog() == DialogResult.OK)
                 {
-                    /*System.IO.TextWriter writer = new System.IO.StreamWriter(dg.FileName);
-                    writer.Write(contents, false, System.Text.Encoding.UTF8, 512);
-                    writer.Close();*/
-                    File.WriteAllText(dg.FileName, @contents);
+                    File.WriteAllText(dg.FileName, contents);
                     MessageBox.Show("Das Inhaltsverzeichnis wurde gespeichert.", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
