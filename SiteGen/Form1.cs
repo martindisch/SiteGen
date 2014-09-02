@@ -47,7 +47,7 @@ namespace SiteGen
             if (Directory.Exists(folderOriginPath.Text) && Directory.Exists(folderTargetPath.Text))
             {
                 folderProgress.Value = 0;
-                folderProgress.Maximum = System.IO.Directory.GetDirectories(folderOriginPath.Text, "*", System.IO.SearchOption.AllDirectories).Count();
+                folderProgress.Maximum = Directory.GetDirectories(folderOriginPath.Text, "*", SearchOption.AllDirectories).Count();
                 folderProgress.Minimum = 0;
                 folderProgress.Step = 1;
                 generate(folderOriginPath.Text, folderTargetPath.Text, 1);
@@ -107,7 +107,20 @@ namespace SiteGen
 
         private void contentsGo_Click(object sender, EventArgs e)
         {
-
+            if (Directory.Exists(contentsOriginPath.Text))
+            {
+                contentsProgress.Value = 0;
+                contentsProgress.Maximum = Directory.GetDirectories(contentsOriginPath.Text, "*", SearchOption.AllDirectories).Count();
+                contentsProgress.Minimum = 0;
+                contentsProgress.Step = 1;
+                // Do work here
+                // Show SaveFile dialog
+                MessageBox.Show("Das Inhaltsverzeichnis wurde gespeichert.", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Dieses Verzeichnis existiert nicht.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
