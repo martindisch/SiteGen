@@ -9,7 +9,7 @@ namespace SiteGen
 {
     class Util
     {
-        public static String getFiletype(String extension)
+        private static String getFiletype(String extension)
         {
             String type;
             String lower = extension.ToLower();
