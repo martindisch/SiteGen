@@ -30,6 +30,10 @@ namespace SiteGen
             {
                 type = "PDF";
             }
+            else if (lower.Contains("wmv"))
+            {
+                type = "Movie";
+            }
             else if (lower.Contains("folder"))
             {
                 type = "Folder";
