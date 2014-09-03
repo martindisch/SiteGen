@@ -16,15 +16,25 @@ namespace SiteGen
 
             if (lower.Contains("doc"))
             {
-                type = "Word";
+                type = "DOC";
+                if (lower.Contains("docx"))
+                {
+                    type = "DOCX";
+                }
             }
             else if (lower.Contains("ppt"))
             {
-                type = "PowerPoint";
+                type = "PPT";
+                if (lower.Contains("pptx")) {
+                    type = "PPTX";
+                }
             }
             else if (lower.Contains("xls"))
             {
-                type = "Excel";
+                type = "XLS";
+                if (lower.Contains("xlsx")) {
+                    type = "XLSX";
+                }
             }
             else if (lower.Contains("pdf"))
             {
