@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using NaturalSorting;
 
 namespace SiteGen
 {
@@ -63,6 +64,9 @@ namespace SiteGen
             DirectoryInfo directory = new DirectoryInfo(path);
             DirectoryInfo[] directories = directory.GetDirectories();
             FileInfo[] files = directory.GetFiles();
+
+            Array.Sort(directories, new AlphanumDirectoryComparer());
+            Array.Sort(files, new AlphanumFileComparer());
 
             String content = "<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'> <html> <head> <meta http-equiv='Content-Type' content='text/html; charset=utf-8'> <title>" + directory.Name + "</title> <style type='text/css'> body { 	background-color: #FFF; 	margin-top: 40px;	 } table { 	font-family: Arial, Helvetica, sans-serif; 	font-size: 11pt; } h1 { 	font-family: Arial, Helvetica, sans-serif; 	font-weight: bold; 	font-size: 24px; } </style> </head>  <body> <h1>" + directory.Name + "</h1> <table width='559' border='0'>";
             foreach (DirectoryInfo folder in directories)
@@ -137,6 +141,8 @@ namespace SiteGen
             DirectoryInfo directory = new DirectoryInfo(path);
             DirectoryInfo[] directories = directory.GetDirectories();
 
+            Array.Sort(directories, new AlphanumDirectoryComparer());
+
             String entries = "";
             foreach (DirectoryInfo folder in directories)
             {
@@ -150,6 +156,8 @@ namespace SiteGen
         {
             DirectoryInfo directory = new DirectoryInfo(path);
             DirectoryInfo[] directories = directory.GetDirectories();
+
+            Array.Sort(directories, new AlphanumDirectoryComparer());
 
             String entry = "<li><a href='" + href + "/frame.html" + "' target='leftFrame1'>" + directory.Name + "</a>";
             if (directories.Length > 0)
