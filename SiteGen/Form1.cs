@@ -81,7 +81,7 @@ namespace SiteGen
             foreach (FileInfo file in files)
             {
                 String ext = file.Extension;
-                if (!file.Attributes.HasFlag(FileAttributes.Hidden))
+                if (!file.Attributes.HasFlag(FileAttributes.Hidden) && !ext.Contains("db"))
                 {
                     content += Util.createEntry(file.Name, file.Extension, subLevel);
                 }
